@@ -75,7 +75,7 @@ pipeline {
                 [[artifactId: "${ArtifactId}", 
                 classifier: '', 
              // file: "target/${ArtifactId}-${Version}.war",
-                file: "target/${Name}.war" ,  
+                file: "target/petclinic.war" ,  
                 type: 'war']], 
                 credentialsId: 'Nexus_Artifact', 
                 groupId: "${GroupId}", 
