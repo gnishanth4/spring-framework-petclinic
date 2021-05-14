@@ -6,7 +6,7 @@ pipeline {
         JAVA_TOOL_OPTIONS = "-Duser.home=/home/jenkins"
         ArtifactId = readMavenPom().getArtifactId()
         Version = readMavenPom().getVersion()
-        Name = readMavenPom().getFinalName()
+        Name = readMavenPom().getfinalName()
         GroupId = readMavenPom().getGroupId()
         registry = "gnishanth444/petclinic"
         registryCredential = 'dockerhub-creds'
