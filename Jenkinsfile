@@ -22,7 +22,7 @@ pipeline {
         stage("Build Project") {
             agent {
               docker {
-                   image "maven:3.6.0-jdk-13"
+                   image "maven:3.6.0-jdk-8"
                    args "-v /tmp:/home/jenkins/.m2 -e MAVEN_CONFIG=/home/jenkins/.m2 -u root"
                    reuseNode true
             }
@@ -43,7 +43,7 @@ pipeline {
         stage("Code Quality Test") { 
              agent { 
                   docker {
-                    image "maven:3.6.0-jdk-13"
+                    image "maven:3.6.0-jdk-8"
                     args "-v /tmp:/home/jenkins/.m2 -e MAVEN_CONFIG=/home/jenkins/.m2 -u root"
                     reuseNode true  
                    }
