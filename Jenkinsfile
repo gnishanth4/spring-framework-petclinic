@@ -1,6 +1,6 @@
 pipeline {
  
-    agent any
+    agent { label 'java-mvn' }
      
     environment {
         JAVA_TOOL_OPTIONS = "-Duser.home=/home/jenkins"
