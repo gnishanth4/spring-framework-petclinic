@@ -1,6 +1,6 @@
 pipeline {
  
-    agent { label 'java-mvn' }
+    agent { label 'java' }
      
     environment {
         JAVA_TOOL_OPTIONS = "-Duser.home=/home/jenkins"
@@ -105,7 +105,21 @@ pipeline {
                    }
                 }
               }
-            }       
+            }
+         // Stage 8 Deploy to K8 Cluster
+        stage("Deploy"){
+         input {
+                message "Continue to Deploy?"
+                ok "Yes, we should."
+                submitter "jenkins"
+                
+            }
+         steps{
+          script{
+              build job: 'PetClinic_Release_Pipeline'         
+            }
+         }
+       }
         }
       post {
         success {
